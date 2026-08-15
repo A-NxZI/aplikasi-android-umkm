@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Custom Bottom Navigation Bar
-/// Sesuai desain Figma: tab aktif punya background oranye
-/// berbentuk arch (lengkung) di atas, icon lain berwarna oranye polos.
 class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
