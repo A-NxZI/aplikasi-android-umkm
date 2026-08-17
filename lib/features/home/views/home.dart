@@ -11,9 +11,33 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildAddressBar(),
+        SizedBox(height: 16),
         _buildMainBanner(),
+        SizedBox(height: 16),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              'Pilih Menu Favoritmu',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            )
+          ),
+          SizedBox(height: 16),
+          Container(
+            height: 100,
+            color: Colors.green,
+          )
+        ],
+        )
       ],
       )
     );
