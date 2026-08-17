@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tes/features/home/views/home.dart';
+import 'package:tes/core/constants/app_colors.dart';
 
 /// Custom Bottom Navigation Bar
 /// Sesuai desain Figma: tab aktif punya background oranye
@@ -14,7 +15,7 @@ class CustomBottomNavBar extends StatelessWidget {
     required this.onTap,
   });
 
-  static const Color primaryOrange = Color(0xFFEA4803);
+  static const Color = AppColors.primary;
 
   static const List<IconData> _icons = [
     Icons.home_rounded,
@@ -32,7 +33,7 @@ class CustomBottomNavBar extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
         border: Border(
-          top: BorderSide(color: Color(0xFFEDEDED), width: 1),
+          top: BorderSide(color: AppColors.primary, width: 1),
         ),
       ),
       child: Row(
@@ -75,7 +76,7 @@ class _NavItem extends StatelessWidget {
             : Center(
                 child: Icon(
                   icon,
-                  color: CustomBottomNavBar.primaryOrange,
+                  color: AppColors.primary,
                   size: 26,
                 ),
               ),
@@ -103,7 +104,7 @@ class _ActiveArch extends StatelessWidget {
             child: Container(
               width: 64,
               height: 44,
-              color: CustomBottomNavBar.primaryOrange,
+              color: AppColors.primary,
             ),
           ),
         ),
