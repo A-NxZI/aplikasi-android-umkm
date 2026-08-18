@@ -31,6 +31,12 @@ class HomePage extends StatelessWidget {
               ),
             )
           ),
+          SizedBox(width: 8), // Jarak antara teks dan ikon
+          Icon(
+            Icons.chevron_right,
+            color: Colors.black,
+            size: 20,
+          ),
           SizedBox(height: 16),
           Container(
             height: 100,
