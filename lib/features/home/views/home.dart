@@ -41,7 +41,15 @@ class HomePage extends StatelessWidget {
           Container(
             height: 100,
             color: Colors.green,
-          )
+          ),
+      Text(
+        'Lihat Semua',
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 14,
+          color: Colors.orange, // Sesuaikan dengan warna orange aplikasi Anda
+        ),
+      ),
         ],
         )
       ],
