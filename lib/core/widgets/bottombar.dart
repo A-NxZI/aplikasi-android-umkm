@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tes/features/home/views/home.dart';
 import 'package:tes/core/constants/app_colors.dart';
+import 'package:tes/features/home/views/profile.dart';
 
 /// Custom Bottom Navigation Bar
 /// Sesuai desain Figma: tab aktif punya background oranye
@@ -163,13 +164,15 @@ class _HomeScreenExampleState extends State<HomeScreenExample> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = const [
-    const HomePage( 
+    HomePage( 
       key: PageStorageKey('HomePage'),
     ),
-    const Center(child: Text('Menu')),
-    const Center(child: Text('Cart')),
-    const Center(child: Text('Orders')),
-    const Center(child: Text('Profile')),
+    Center(child: Text('Menu')),
+    Center(child: Text('Cart')),
+    Center(child: Text('Orders')),
+    ProfilePage(
+      key: PageStorageKey('ProfilePage'),
+    ),
   ];
 
   @override
