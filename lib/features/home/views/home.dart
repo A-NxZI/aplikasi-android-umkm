@@ -20,13 +20,11 @@ class HomePage extends StatelessWidget {
 Column(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: [
-    // --- GANTI MULAI DARI SINI ---
     Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Sisi Kiri: Menggabungkan Teks Judul & Ikon Panah
           Row(
             children: const [
               Text(
@@ -45,7 +43,6 @@ Column(
               ),
             ],
           ),
-          // Sisi Kanan: Teks Lihat Semua
           const Text(
             'Lihat Semua',
             style: TextStyle(
@@ -57,12 +54,10 @@ Column(
         ],
       ),
     ),
-    // --- SAMPAI SINI ---
     
-    const SizedBox(height: 16),
-    // Kontainer hijau (konten menu) dipindahkan ke bawah setelah header selesai
+    const SizedBox(height: 20),
     Container(
-      height: 100,
+      height: 104,
       margin: const EdgeInsets.symmetric(horizontal: 20),
       color: Colors.green,
     ),
