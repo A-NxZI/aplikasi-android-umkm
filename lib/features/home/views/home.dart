@@ -17,41 +17,57 @@ class HomePage extends StatelessWidget {
         SizedBox(height: 16),
         _buildMainBanner(),
         SizedBox(height: 16),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              'Pilih Menu Favoritmu',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-                color: Colors.black,
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    // --- GANTI MULAI DARI SINI ---
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // Sisi Kiri: Menggabungkan Teks Judul & Ikon Panah
+          Row(
+            children: const [
+              Text(
+                'Pilih Menu Favoritmu',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
               ),
-            )
+              SizedBox(width: 4), // Jarak horizontal ke ikon
+              Icon(
+                Icons.chevron_right,
+                color: AppColors.textPrimary,
+                size: 20,
+              ),
+            ],
           ),
-          SizedBox(width: 8), // Jarak antara teks dan ikon
-          Icon(
-            Icons.chevron_right,
-            color: Colors.black,
-            size: 20,
+          // Sisi Kanan: Teks Lihat Semua
+          const Text(
+            'Lihat Semua',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 14,
+              color: Colors.orange,
+            ),
           ),
-          SizedBox(height: 16),
-          Container(
-            height: 100,
-            color: Colors.green,
-          ),
-      Text(
-        'Lihat Semua',
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 14,
-          color: Colors.orange, // Sesuaikan dengan warna orange aplikasi Anda
-        ),
-      ),
         ],
-        )
+      ),
+    ),
+    // --- SAMPAI SINI ---
+    
+    const SizedBox(height: 16),
+    // Kontainer hijau (konten menu) dipindahkan ke bawah setelah header selesai
+    Container(
+      height: 100,
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      color: Colors.green,
+    ),
+  ],
+)
       ],
       )
     );
