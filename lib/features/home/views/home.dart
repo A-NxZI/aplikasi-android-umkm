@@ -34,7 +34,7 @@ Column(
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
-                  color: Colors.black,
+                  color: AppColors.textPrimary,
                 ),
               ),
               SizedBox(width: 4), // Jarak horizontal ke ikon
@@ -51,7 +51,7 @@ Column(
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 14,
-              color: Colors.orange,
+              color: AppColors.primary,
             ),
           ),
         ],
