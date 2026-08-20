@@ -13,6 +13,14 @@ class ProfilePage extends StatelessWidget {
         children: [
           SizedBox(height: 16),
           _buildProfileCard(),
+          SizedBox(height: 16),
+          _buildMenuItem(
+            icon: Icons.location_on_outlined,
+            title: 'Alamat Saya',
+            onTap: () {
+              // Aksi ketika menu item ditekan
+            },
+          ),
         ],
       ),
     );
@@ -93,17 +101,33 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(IconData icon, String title, VoidCallback onTap) {
-    return ListTile(
-      leading: Icon(icon, color: AppColors.primary),
-      title: Text(
-        title,
-        style: const TextStyle(
-          fontWeight: FontWeight.w600,
-          fontSize: 16,
-          color: AppColors.textPrimary,
-        ),
-      ),
+  Widget _buildMenuItem({required IconData icon, required String title, required VoidCallback onTap}) {
+    return InkWell(
       onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        decoration: BoxDecoration(
+          color: AppColors.background,
+          borderRadius: BorderRadius.circular(10),
+        ),
+      child: Row(
+        children: [
+          Icon(icon, 
+          color: AppColors.textPrimary,
+          size: 30
+          ),
+          SizedBox(width: 16),
+          Text(title,
+          style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w500
+          )),
+          const Spacer(),
+          const Icon(
+            Icons.arrow_forward_ios,
+            size: 16),
+        ],
+      ),
+      )
     );
   }
