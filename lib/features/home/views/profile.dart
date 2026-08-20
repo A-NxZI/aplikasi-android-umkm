@@ -8,28 +8,39 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: _buildAppBar(),
+      body: Column(
+        children: [
+          SizedBox(height: 16),
+          _buildProfileCard(),
+        ],
+      ),
+    );
+  }
+}
+
+  PreferredSizeWidget _buildAppBar() {
+    return PreferredSize(
+      preferredSize: const Size.fromHeight(56),
+      child: AppBar(
         title: const Text('Akun Saya',
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 20,
               color: AppColors.textPrimary,
-              
-            )
-            ),
+            )),
         backgroundColor: AppColors.background,
       ),
-      body: Column(
-        children: [
-    Padding(padding: const EdgeInsets.symmetric(horizontal: 20),
-    
-    ),
-    const SizedBox(height: 20),
-    Container(
-      height: 98,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      decoration: BoxDecoration(
-        color: AppColors.background,
+    );
+  }
+
+  Widget _buildProfileCard() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Container(
+        height: 98,
+        decoration: BoxDecoration(
+          color: AppColors.background,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
@@ -79,8 +90,20 @@ class ProfilePage extends StatelessWidget {
         ],
       ),
     )
-        ],
-      ),
     );
   }
-}
+
+  Widget _buildMenuItem(IconData icon, String title, VoidCallback onTap) {
+    return ListTile(
+      leading: Icon(icon, color: AppColors.primary),
+      title: Text(
+        title,
+        style: const TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 16,
+          color: AppColors.textPrimary,
+        ),
+      ),
+      onTap: onTap,
+    );
+  }
