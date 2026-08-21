@@ -11,7 +11,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(),
-      body: Column(
+      body: SingleChildScrollView( 
+        child : Column(
         crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildAddressBar(),
@@ -36,7 +37,7 @@ Column(
                   color: AppColors.textPrimary,
                 ),
               ),
-              SizedBox(width: 4), // Jarak horizontal ke ikon
+              SizedBox(width: 4),
               Icon(
                 Icons.chevron_right,
                 color: AppColors.textPrimary,
@@ -58,13 +59,14 @@ Column(
     
     const SizedBox(height: 20),
     Container(
-      height: 104,
+      height: 120,
       margin: const EdgeInsets.symmetric(horizontal: 20),
       color: Colors.green,
     ),
   ],
 )
       ],
+      )
       )
     );
   }
@@ -186,6 +188,12 @@ Column(
 
   //banner
   Widget _buildMainBanner() {
-    return const MainBanner();
+    return const MainBanner(
+      images: [
+        'assets/images/banner1.png',
+        'assets/images/banner2.png',
+      ],
+      height: 250,
+    );
 
   }
