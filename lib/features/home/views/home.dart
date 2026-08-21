@@ -63,6 +63,8 @@ Column(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       color: Colors.green,
     ),
+    SizedBox(height: 24,),
+    _buildPromoBanner()
   ],
 )
       ],
@@ -191,9 +193,16 @@ Column(
     return const MainBanner(
       images: [
         'assets/images/banner1.png',
-        'assets/images/banner2.png',
+        'assets/images/banner1.png',
       ],
       height: 250,
     );
-
+  }
+  
+  Widget _buildPromoBanner() {
+    return const MainBanner(images: [
+      'assets/images/banner2.png'
+    ],
+    height: 200,
+    );
   }
