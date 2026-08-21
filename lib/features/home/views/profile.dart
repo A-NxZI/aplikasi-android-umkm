@@ -18,7 +18,42 @@ class ProfilePage extends StatelessWidget {
             icon: Icons.location_on_outlined,
             title: 'Alamat Saya',
             onTap: () {
-              // Aksi ketika menu item ditekan
+            },
+          ),
+          _buildMenuItem(
+            icon: Icons.payment_outlined,
+            title: 'Metode Pembayaran',
+            onTap: () {
+            },
+          ),
+          _buildMenuItem(
+            icon: Icons.favorite_border_outlined,
+            title: 'Favorit Saya',
+            onTap: () {
+            },
+          ),
+          _buildMenuItem(
+            icon: Icons.local_offer_outlined,
+            title: 'Promo & voucher',
+            onTap: () {
+            },
+          ),
+          _buildMenuItem(
+            icon: Icons.help_outline,
+            title: 'Bantuan',
+            onTap: () {
+            },
+          ),
+          _buildMenuItem(
+            icon: Icons.info_outline,
+            title: 'Tentang Kami',
+            onTap: () {
+            },
+          ),
+          _buildMenuItem(
+            icon: Icons.logout,
+            title: 'Ganti Akun/Keluar',
+            onTap: () {
             },
           ),
         ],
@@ -121,7 +156,7 @@ class ProfilePage extends StatelessWidget {
           Text(title,
           style: const TextStyle(
           fontSize: 16,
-          fontWeight: FontWeight.w500
+          fontWeight: FontWeight.w600
           )),
           const Spacer(),
           const Icon(
