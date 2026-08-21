@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tes/core/constants/app_colors.dart';
+import 'package:tes/features/home/widgets/banner.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -185,26 +186,6 @@ Column(
 
   //banner
   Widget _buildMainBanner() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SizedBox(
-        height: 214,
-        child: Stack(
-          children: [
-            PageView.builder(
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 4),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
+    return const MainBanner();
+
   }
