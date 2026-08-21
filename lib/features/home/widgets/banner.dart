@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MainBanner extends StatefulWidget {
-  const MainBanner({super.key});
+  final List<String> images;
+  final double height;
+
+  const MainBanner({
+    super.key,
+    required this.images,
+    this.height = 214,
+  });
 
   @override
   State<MainBanner> createState() => _MainBannerState();
@@ -10,14 +17,6 @@ class MainBanner extends StatefulWidget {
 class _MainBannerState extends State<MainBanner> {
   late final PageController _bannerController;
   int _currentBannerIndex = 0;
-
-  final List<String> _bannerImages = [
-    'assets/images/banner1.png',
-    'assets/images/banner2.png',
-    'assets/images/banner3.png',
-    'assets/images/banner4.png',
-    'assets/images/banner5.png',
-  ];
 
   @override
   void initState() {
@@ -42,12 +41,12 @@ class _MainBannerState extends State<MainBanner> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: SizedBox(
-        height: 250,
+        height: widget.height,
         child: Stack(
           children: [
             PageView.builder(
               controller: _bannerController,
-              itemCount: _bannerImages.length,
+              itemCount: widget.images.length,
               itemBuilder: (context, index) {
                 return Container(
                   margin: const EdgeInsets.symmetric(horizontal: 4),
@@ -56,7 +55,7 @@ class _MainBannerState extends State<MainBanner> {
                   ),
                   clipBehavior: Clip.antiAlias,
                   child: Image.asset(
-                    _bannerImages[index],
+                    widget.images[index],
                     fit: BoxFit.cover,
                     width: double.infinity,
                   ),
@@ -69,7 +68,7 @@ class _MainBannerState extends State<MainBanner> {
               right: 0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(_bannerImages.length, (index) {
+                children: List.generate(widget.images.length, (index) {
                   final bool isActive = index == _currentBannerIndex;
                   return AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
