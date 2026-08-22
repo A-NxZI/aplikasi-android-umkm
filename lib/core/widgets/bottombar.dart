@@ -3,6 +3,7 @@ import 'package:tes/features/home/views/home.dart';
 import 'package:tes/core/constants/app_colors.dart';
 import 'package:tes/features/home/views/profile.dart';
 import 'package:tes/features/home/views/ordernote.dart';
+import 'package:tes/features/home/views/menu.dart';
 
 /// Custom Bottom Navigation Bar
 /// Sesuai desain Figma: tab aktif punya background oranye
@@ -168,7 +169,9 @@ class _HomeScreenExampleState extends State<HomeScreenExample> {
     HomePage( 
       key: PageStorageKey('HomePage'),
     ),
-    Center(child: Text('Menu')),
+    MenuPage(
+      key: PageStorageKey('MenuPage')
+      ),
     Center(child: Text('Cart')),
     OrderNotePage(
       key: PageStorageKey('OrderNotePage'),
