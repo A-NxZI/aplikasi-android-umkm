@@ -11,6 +11,7 @@ class MenuPage extends StatelessWidget {
       appBar: _buildAppBar(),
       body: Column(
       children: [
+        _buildMainBanner()
       ],
       ),
     );
@@ -31,3 +32,16 @@ class MenuPage extends StatelessWidget {
       ),
     );
   }
+
+
+  //banner
+  Widget _buildMainBanner() {
+    return const MainBanner(
+      images: [
+        'assets/images/banner1.png',
+        'assets/images/banner1.png',
+      ],
+      height: 250,
+    );
+  }
+  
